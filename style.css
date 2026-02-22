@@ -828,6 +828,8 @@ body {
   }
   .offcanvas-header .navbar-brand img{
     filter: invert(1);
+    width: 220px;
+    height: auto;
   }
    .navbar-nav .nav-item::after {
     display: none;
