@@ -1369,26 +1369,26 @@
     }
   });
 
-   new Swiper('.case-swiper', {
-     loop: true,
-    spaceBetween: 22,
-    speed: 700,
-    slidesPerGroup: 3,
-    navigation: {
-      nextEl: '.case-next',
-      prevEl: '.case-prev'
-    },
-    pagination: {
-      el: '.case-dots',
-      clickable: true
-    },
-    breakpoints: {
-      0:   { slidesPerView: 1.1 },
-      576: { slidesPerView: 1.6 },
-      768: { slidesPerView: 2.2 },
-      992: { slidesPerView: 3 }
-    }
-  });
+  new Swiper('.case-swiper', {
+  loop: true,
+  spaceBetween: 22,
+  speed: 700,
+
+  navigation: {
+    nextEl: '.case-next',
+    prevEl: '.case-prev'
+  },
+  pagination: {
+    el: '.case-dots',
+    clickable: true
+  },
+
+  breakpoints: {
+    0:   { slidesPerView: 1.1, slidesPerGroup: 1 }, 
+    576: { slidesPerView: 1.6, slidesPerGroup: 1 },
+    768: { slidesPerView: 2.2, slidesPerGroup: 2 }, 
+    992: { slidesPerView: 3,   slidesPerGroup: 3 }
+  }
 
   const goTopBtn = document.getElementById('goTop');
   window.addEventListener('scroll', () => {
