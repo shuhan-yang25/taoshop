@@ -59,20 +59,12 @@ body {
 #heroCarousel,
 #heroCarousel .carousel-inner,
 #heroCarousel .carousel-item {
-  height: 90vh;
-}
-
-.hero-img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: 0% 45%;
+  height: 74vh;
 }
 .video-slide {
   position: relative;
   overflow: hidden;
 }
-
 .video-slide::after {
   content: '';
   position: absolute;
@@ -80,14 +72,13 @@ body {
   background: rgba(0, 0, 0, 0.35);
   z-index: 1;
 }
-.carousel-video {
-  position: absolute;
-  inset: 0;
+.carousel-video,
+.hero-img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: cover; 
+  object-position: center;
 }
-
 .hero-logo {
   position: absolute;
   left: 50%;
@@ -834,20 +825,39 @@ body {
    .navbar-nav .nav-item::after {
     display: none;
   }
-    .hero-logo {
+  .mobile-offcanvas{
+  width: min(86vw, 360px);
+}
+.navbar-toggler:focus{
+  box-shadow: unset;
+}
+.mobile-nav-list .nav-link{
+  padding: 16px 0;
+  border-bottom: 1px solid rgba(0,0,0,.12);
+  color: #555 !important;
+}
+.mobile-nav-list .nav-link:hover{
+  color: #ffa500 !important;
+}
+.mobile-nav-social{
+  display: flex;
+  gap: 14px;
+}
+.offcanvas{
+  max-width: 90%;
+}
+.mobile-nav-social .social{
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  background: #ffa500;
+  color: #fff;
+  text-decoration: none;
+}
+  .hero-logo {
     width: 70%;
-  }
-  .hero-img {
-      width: 100%;
-      height: 100%;
-      object-fit: contain;
-  }
-  #heroCarousel, #heroCarousel .carousel-inner, #heroCarousel .carousel-item{
-    height: auto;
-  }
-
-  #heroCarousel .carousel-item.video-slide{
-    height: 76vh;
   }
   .about-bg{
     display: none;
@@ -862,38 +872,18 @@ body {
   .location-map{ min-height: 360px; }
 }
 @media (max-width: 768px){
-  .mobile-offcanvas{
-  width: min(86vw, 360px);
+.video-slide::after {
+  height: fit-content;
 }
-
-.mobile-nav-list .nav-link{
-  padding: 16px 0;
-  border-bottom: 1px solid rgba(0,0,0,.12);
-  color: #555 !important;
+#heroCarousel,
+#heroCarousel .carousel-inner,
+#heroCarousel .carousel-item {
+  height:auto;
 }
-.mobile-nav-list .nav-link:hover{
-  color: #ffa500 !important;
+.hero-img{
+  object-fit: contain;
+  background: #000; 
 }
-.mobile-nav-social{
-  display: flex;
-  gap: 14px;
-}
-.offcanvas{
-  max-width: 80%;
-}
-.mobile-nav-social .social{
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  display: grid;
-  place-items: center;
-  background: #ffa500;
-  color: #fff;
-  text-decoration: none;
-}
-  #heroCarousel .carousel-item.video-slide{
-    height: 60vh;
-  }
   .mb-9{
     margin-bottom: 20px;
   }
@@ -907,7 +897,10 @@ body {
     opacity: 1;
     transform: none;
   }
-   .service-section{
+  .service-title{
+    margin-bottom: 28px;
+  }
+  .service-section{
     padding:80px 0;
   }
   .main-title{
@@ -953,13 +946,6 @@ body {
   .navbar-brand img{
     width: 270px;
     height: 40px;
-  }
-   .hero-img{
-    object-fit: contain;
-    background: #000; 
-  }
-  #heroCarousel .carousel-item.video-slide{
-    height: 42vh;
   }
   .footer-logo{ height: 24px; }
   .footer-follow .follow-line{ width: 28px; }
